@@ -1,35 +1,35 @@
 import Link from "next/link";
+import styled from "styled-components";
 
 export default function Header() {
   return (
-    <nav>
+    <StyledNav>
       <h1>Next'Blog</h1>
       <div>
-        <Link href="/">
-          <a>Blog</a>
-        </Link>
-        <Link href="/">
-          <a>About</a>
-        </Link>
+        <Link href="/">Blog</Link>
+        <Link href="/about">About</Link>
       </div>
-      <style jsx>{`
-        nav {
-          background: #444;
-          width: auto;
-          padding: 0 2rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          font-size: 1rem;
-        }
-        nav a {
-          margin-right: 1rem;
-          text-decoration: none;
-        }
-        nav a:hover {
-          text-decoration: underline;
-        }
-      `}</style>
-    </nav>
+    </StyledNav>
   );
 }
+
+const StyledNav = styled.nav`
+  background: whitesmoke;
+  color: black;
+  width: auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+
+  a {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: black;
+
+    :hover {
+      text-decoration: underline;
+    }
+  }
+`;

@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 
 export default function App({ Component, pageProps }) {
   return (
-    <Layout pageTitle="Blog" description="My Personal Blog">
+    <Layout pageTitle="Artfly Projects" description="My Projects init...">
       <Component {...pageProps} />
     </Layout>
   );
