@@ -1,10 +1,10 @@
-import { HeadPost } from './HeadPost'
+import { ProjectHeader } from "./ProjectHeader";
 
-export default function BlogPost({ children, meta}) {
+export default function BlogPost({ children, meta }) {
   return (
     <>
-      <HeadPost meta={meta} isBlogPost />
+      <ProjectHeader meta={meta} isBlogPost />
       <article>{children}</article>
     </>
-  )
+  );
 }

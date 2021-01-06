@@ -1,13 +1,11 @@
-export const HeadPost = ({ meta, isBlogPost }) => (
+export const ProjectHeader = ({ meta, isBlogPost }) => (
   <>
-    <h1 className={isBlogPost? 'great-title' :null} >{meta.title}</h1>
-    <div className='details'>
-    {
-        isBlogPost? null: <p>{meta.description}</p>
-    }  
+    <h1 className={isBlogPost ? "great-title" : null}>{meta.title}</h1>
+    <div className="details">
+      {isBlogPost ? null : <p>{meta.description}</p>}
       <span>{meta.date}</span>
-      <span role='img' aria-label='one coffee'>
-        ☕ {meta.readTime + ' min read'}
+      <span role="img" aria-label="one coffee">
+        ☕ {meta.readTime + " min read"}
       </span>
     </div>
     <style jsx>
@@ -18,7 +16,7 @@ export const HeadPost = ({ meta, isBlogPost }) => (
           color: #f39c12;
         }
         .great-title {
-            font-size: 2rem;
+          font-size: 2rem;
         }
         .details span {
           color: #bdbdbd;
@@ -30,4 +28,4 @@ export const HeadPost = ({ meta, isBlogPost }) => (
       `}
     </style>
   </>
-)
+);

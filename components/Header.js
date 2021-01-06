@@ -4,7 +4,9 @@ import styled from "styled-components";
 export default function Header() {
   return (
     <StyledNav>
-      <h1>Next'Blog</h1>
+      <Link href="/">
+        <h1>Next'Blog</h1>
+      </Link>
       <div>
         <Link href="/">Blog</Link>
         <Link href="/about">About</Link>
@@ -22,6 +24,10 @@ const StyledNav = styled.nav`
   justify-content: space-between;
   align-items: center;
   font-size: 1rem;
+
+  h1 {
+    cursor: pointer;
+  }
 
   a {
     margin-right: 1rem;

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HeadPost } from "./HeadPost";
+import { ProjectHeader } from "./ProjectHeader";
 
 export const Project = ({ project }) => {
   const {
@@ -9,7 +9,7 @@ export const Project = ({ project }) => {
 
   return (
     <article>
-      <HeadPost meta={meta} />
+      <ProjectHeader meta={meta} />
       <Link href={"/projects" + link}>
         <a>Read more &rarr;</a>
       </Link>
