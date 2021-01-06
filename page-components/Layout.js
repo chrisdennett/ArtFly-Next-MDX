@@ -12,7 +12,7 @@ export default function Layout({ children, pageTitle, description }) {
       </Head>
       <main>
         <Header />
-        <div className="content">{children}</div>
+        {children}
       </main>
     </>
   );

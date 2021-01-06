@@ -1,31 +1,31 @@
-export const ProjectHeader = ({ meta, isBlogPost }) => (
-  <>
-    <h1 className={isBlogPost ? "great-title" : null}>{meta.title}</h1>
-    <div className="details">
-      {isBlogPost ? null : <p>{meta.description}</p>}
+import Link from "next/link";
+import styled from "styled-components";
+
+export const ProjectHeader = ({ meta }) => {
+  const url = "/" + meta.people.split(" ").join("-").toLowerCase();
+
+  return (
+    <Header>
+      <h1>{meta.title}</h1>
       <span>{meta.date}</span>
-      <span role="img" aria-label="one coffee">
-        ☕ {meta.readTime + " min read"}
+      <span>
+        <Link href={url}>{meta.people}</Link>
       </span>
-    </div>
-    <style jsx>
-      {`
-        h1 {
-          font-size: 1.5rem;
-          font-weight: 700;
-          color: #f39c12;
-        }
-        .great-title {
-          font-size: 2rem;
-        }
-        .details span {
-          color: #bdbdbd;
-          margin-right: 1rem;
-        }
-        .details {
-          margin-bottom: 1rem;
-        }
-      `}
-    </style>
-  </>
-);
+      <p>{meta.description}</p>
+    </Header>
+  );
+};
+
+const Header = styled.div`
+  text-align: center;
+  margin-bottom: 50px;
+
+  span {
+    display: block;
+  }
+
+  p {
+    padding-top: 10px;
+    font-size: 1.5em;
+  }
+`;

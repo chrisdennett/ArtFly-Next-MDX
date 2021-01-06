@@ -1,11 +1,17 @@
+import styled from "styled-components";
 import { ProjectHeader } from "../components/ProjectHeader";
-import styles from "./project.module.css";
 
 export default function Project({ children, meta }) {
   return (
-    <>
+    <Holder>
       <ProjectHeader meta={meta} isBlogPost />
-      <article className={styles.project}>{children}</article>
-    </>
+      <article>{children}</article>
+    </Holder>
   );
 }
+
+const Holder = styled.div`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 20px 10px 50px 20px;
+`;

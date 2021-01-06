@@ -1,13 +1,12 @@
 import React from "react";
-import styles from "./img.module.css";
 import { Image, Placeholder } from "cloudinary-react";
+import styled from "styled-components";
 
-const Img = ({ src, w, h, alt }) => {
+const Img = ({ src, alt, style, shadow }) => {
   return (
-    <>
+    <Holder style={style}>
       <Image
         alt={alt}
-        className={styles.img}
         cloudName="artfly"
         publicId={`artfly-projects/${src}`}
         loading="lazy"
@@ -19,23 +18,16 @@ const Img = ({ src, w, h, alt }) => {
       >
         <Placeholder type="pixelate" />
       </Image>
-
-      {/* <img
-        src={`https://res.cloudinary.com/artfly/image/upload/c_thumb,w_200,g_face/v1609227691/artfly-projects/${src}`}
-        width={200}
-        height={h}
-        alt={alt}
-        className={styles.img}
-      />
-      <img
-        src={`https://res.cloudinary.com/artfly/image/upload/v1609227691/artfly-projects/${src}`}
-        width={w}
-        height={h}
-        alt={alt}
-        className={styles.img}
-      /> */}
-    </>
+    </Holder>
   );
 };
 
 export default Img;
+
+const Holder = styled.div`
+  img {
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px,
+      rgba(0, 0, 0, 0.19) 0px 6px 20px 0px;
+  }
+`;
