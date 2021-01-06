@@ -1,41 +1,12 @@
 import Link from "next/link";
-import styled from "styled-components";
+import styles from "./header.module.css";
 
 export default function Header() {
   return (
-    <StyledNav>
+    <nav className={styles.header}>
       <Link href="/">
-        <h1>Next'Blog</h1>
+        <h1>Artfly</h1>
       </Link>
-      <div>
-        <Link href="/">Blog</Link>
-        <Link href="/about">About</Link>
-      </div>
-    </StyledNav>
+    </nav>
   );
 }
-
-const StyledNav = styled.nav`
-  background: whitesmoke;
-  color: black;
-  width: auto;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1rem;
-
-  h1 {
-    cursor: pointer;
-  }
-
-  a {
-    margin-right: 1rem;
-    text-decoration: none;
-    color: black;
-
-    :hover {
-      text-decoration: underline;
-    }
-  }
-`;
