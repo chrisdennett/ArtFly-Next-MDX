@@ -1,4 +1,5 @@
 import BlogPost from "../../../components/BlogPost";
+import Image from "next/image";
 
 export const meta = {
   title: "Fly Tizzie Fly",
@@ -11,43 +12,90 @@ export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
 
 ## LIVE SITE HERE: [flytizziefly.co.uk](https://flytizziefly.co.uk/)
 
-A web game that's generated using artwork painted by users. Made as part of [SOURCE <span></span>](https://signalfilmandmedia.com/source/)— the Cumbrian Artist Digital Development Lab from [Signal Film & Media <span></span>](https://signalfilmandmedia.com/)for the [Windermere Jetty Museum <span></span>](https://lakelandarts.org.uk/windermere-jetty-museum/).
+<Image
+  src="/img/jennie-paint.jpg"
+  alt="game screen shot"
+  layout="responsive"
+  width={965}
+  height={569}
+/>
 
-In the game you’ll play a Tizzie Whizie skimming over Windermere dodging boats, islands and legends to collect as many stories as you can.
+A web game that's generated using artwork painted by users. Made as part of
+[SOURCE <span></span>](https://signalfilmandmedia.com/source/)— the Cumbrian
+Artist Digital Development Lab from
+[Signal Film & Media <span></span>](https://signalfilmandmedia.com/)for the
+[Windermere Jetty Museum <span></span>](https://lakelandarts.org.uk/windermere-jetty-museum/).
 
-My goal is to introduce the boats and stories of Windermere in a way that’s more palatable for those who’ll play on their phone rather than read the information boards in museums.
+In the game you’ll play a Tizzie Whizie skimming over Windermere dodging boats,
+islands and legends to collect as many stories as you can.
 
-Primarily aimed at families and kids, I want to offer the chance to move from the trance-like consumption of mobile gaming to being creative and experimental with games.
+My goal is to introduce the boats and stories of Windermere in a way that’s more
+palatable for those who’ll play on their phone rather than read the information
+boards in museums.
+
+Primarily aimed at families and kids, I want to offer the chance to move from
+the trance-like consumption of mobile gaming to being creative and experimental
+with games.
 
 ## How it works for users
 
 ## How it works behind the scenes
 
-The remit from the Museum was to create something that works solely online. To do this I’ll be using a range of digital elements, many of which are completely new to me, but are all areas I’ve been keen to get to grips with for a while.
+The remit from the Museum was to create something that works solely online. To
+do this I’ll be using a range of digital elements, many of which are completely
+new to me, but are all areas I’ve been keen to get to grips with for a while.
 
-*   I’ll base my game on [Google’s offline dinosaur game<span></span>](https://www.freecodecamp.org/news/how-to-play-the-no-internet-google-chrome-dinosaur-game-both-online-and-offline/)
-    *   I’ve researched various online game engines, but they all seem too heavy duty for my needs so I’m going to make my own system for moving, point scoring etc.
-*   The printable sheets are based on things called spritesheets (aka [Texture Atlases <span></span>](https://en.wikipedia.org/wiki/Texture_atlas)) which are used in lots of games.
-    *   They are single images containing all the artwork from a game.
-    *   Along with the image there’s a data file containing the locations of each part of the game. E.g. Cloud: x=10, y=20, width:100, height: 50.
-    *   I’ll use this technique to pick out all the game elements from the photographed artwork.
-*   For the progress bar I’m going to try a [SVG line animation<span></span>](https://css-tricks.com/svg-line-animation-works/)
-    *   SVGs (Scalable Vector Graphics) can be modified simply with code.
-    *   I’ve used SVG graphics before, but I wanted to use a technique I’ve seen where you can animate a line within the graphic.
-    *   I’ll use this to represent the game progress as a path along a map of Windermere.
-*   To grab the game sheet from a photo I’ll use things called [Aruco markers<span></span>](https://docs.opencv.org/trunk/d5/dae/tutorial_aruco_detection.html)
-    *   These are markers that can be picked out from an image by analysing the pixel.
-    *   These markers are more commonly used in Augmented Reality applications, but I’ll be using them to pick out the sheet from a user’s photo.
-*   I’ll use a [WebGL Canvas <span></span>](https://webgl2fundamentals.org/)or more spefically an image effect library called [GLFX.js <span></span>](https://evanw.github.io/glfx.js/demo/#perspective)to straighten out images
-    *   It’s very unlikely a user will be able to take a photo that’s completely perpendicular to their artwork.
-    *   WebGL is frequently used for speedy online 3D graphics, but I’ll just be using it to remove any tilt/perspective. This is probably the trickiest part of the project.
-*   I’ll also be using things I’ve used before to make the site: [React <span></span>](https://reactjs.org/), [Node <span></span>](https://nodejs.org/), [Git <span></span>](https://git-scm.com/), [Github <span></span>](https://github.com/), [Netlify<span></span>](https://www.netlify.com/)
+- I’ll base my game on
+  [Google’s offline dinosaur game<span></span>](https://www.freecodecamp.org/news/how-to-play-the-no-internet-google-chrome-dinosaur-game-both-online-and-offline/)
+  - I’ve researched various online game engines, but they all seem too heavy
+    duty for my needs so I’m going to make my own system for moving, point
+    scoring etc.
+- The printable sheets are based on things called spritesheets (aka
+  [Texture Atlases <span></span>](https://en.wikipedia.org/wiki/Texture_atlas))
+  which are used in lots of games.
+  - They are single images containing all the artwork from a game.
+  - Along with the image there’s a data file containing the locations of each
+    part of the game. E.g. Cloud: x=10, y=20, width:100, height: 50.
+  - I’ll use this technique to pick out all the game elements from the
+    photographed artwork.
+- For the progress bar I’m going to try a
+  [SVG line animation<span></span>](https://css-tricks.com/svg-line-animation-works/)
+  - SVGs (Scalable Vector Graphics) can be modified simply with code.
+  - I’ve used SVG graphics before, but I wanted to use a technique I’ve seen
+    where you can animate a line within the graphic.
+  - I’ll use this to represent the game progress as a path along a map of
+    Windermere.
+- To grab the game sheet from a photo I’ll use things called
+  [Aruco markers<span></span>](https://docs.opencv.org/trunk/d5/dae/tutorial_aruco_detection.html)
+  - These are markers that can be picked out from an image by analysing the
+    pixel.
+  - These markers are more commonly used in Augmented Reality applications, but
+    I’ll be using them to pick out the sheet from a user’s photo.
+- I’ll use a [WebGL Canvas <span></span>](https://webgl2fundamentals.org/)or
+  more spefically an image effect library called
+  [GLFX.js <span></span>](https://evanw.github.io/glfx.js/demo/#perspective)to
+  straighten out images
+  - It’s very unlikely a user will be able to take a photo that’s completely
+    perpendicular to their artwork.
+  - WebGL is frequently used for speedy online 3D graphics, but I’ll just be
+    using it to remove any tilt/perspective. This is probably the trickiest part
+    of the project.
+- I’ll also be using things I’ve used before to make the site:
+  [React <span></span>](https://reactjs.org/),
+  [Node <span></span>](https://nodejs.org/),
+  [Git <span></span>](https://git-scm.com/),
+  [Github <span></span>](https://github.com/),
+  [Netlify<span></span>](https://www.netlify.com/)
 
 ## Notes for future me
 
 #### Sketchy buttons etc:
 
-I made them using a free SVG Editor called [Inkscape <span></span>](https://inkscape.org/)and got the files ready for the site using an optimiser called [SVGOMG <span></span>](https://jakearchibald.github.io/svgomg/)and a SVG to React Component widget called [SVG2JSX<span></span>](https://svg2jsx.com/)
+I made them using a free SVG Editor called
+[Inkscape <span></span>](https://inkscape.org/)and got the files ready for the
+site using an optimiser called
+[SVGOMG <span></span>](https://jakearchibald.github.io/svgomg/)and a SVG to
+React Component widget called [SVG2JSX<span></span>](https://svg2jsx.com/)
 
 [http://verysimpledesigns.com/vectors/inkscape-tutorial-sketch-and-hatch.html<span></span>](http://verysimpledesigns.com/vectors/inkscape-tutorial-sketch-and-hatch.html)
 
