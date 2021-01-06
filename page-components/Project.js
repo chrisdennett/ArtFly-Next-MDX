@@ -1,7 +1,7 @@
-import { ProjectHeader } from "./ProjectHeader";
+import { ProjectHeader } from "../components/ProjectHeader";
 import styles from "./project.module.css";
 
-export default function BlogPost({ children, meta }) {
+export default function Project({ children, meta }) {
   return (
     <>
       <ProjectHeader meta={meta} isBlogPost />
