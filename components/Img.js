@@ -1,22 +1,22 @@
 import React from "react";
-import { Image, Placeholder } from "cloudinary-react";
+import { Image, Placeholder, CloudinaryContext } from "cloudinary-react";
 import styled from "styled-components";
 
-const Img = ({ src, alt, style, shadow }) => {
+const Img = ({ src, alt, style }) => {
   return (
     <Holder style={style}>
       <Image
         alt={alt}
+        secure="true"
         cloudName="artfly"
-        publicId={`artfly-projects/${src}`}
-        loading="lazy"
+        publicId={src}
         dpr="auto"
         responsive
         width="auto"
         crop="scale"
         responsiveUseBreakpoints="true"
       >
-        <Placeholder type="pixelate" />
+        <Placeholder type="blur" />
       </Image>
     </Holder>
   );

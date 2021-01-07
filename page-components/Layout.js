@@ -1,7 +1,6 @@
 import Head from "next/head";
 import styled from "styled-components";
 import Header from "./Header";
-import Image from "next/image";
 import Img from "../components/Img";
 
 export default function Layout({ children, pageTitle, description }) {
