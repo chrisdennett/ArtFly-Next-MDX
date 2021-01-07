@@ -13,8 +13,7 @@
     "cloudinary-react": "^1.6.8",
     "next": "^10.0.4",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "styled-components": "^5.2.1"
+    "react-dom": "^17.0.1"
   },
   "license": "ISC",
   "keywords": [],

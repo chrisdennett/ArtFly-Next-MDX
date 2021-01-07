@@ -1,0 +1,19 @@
+.projectCard {
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+
+.projectCard h2 {
+  padding-top: 10px;
+}
+
+.projectCard span {
+  display: block;
+  font-style: italic;
+  margin: 0;
+}
+
+.projectCard p {
+  padding-top: 5px;
+  margin: 0;
+}

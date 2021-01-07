@@ -1,30 +1,15 @@
 import Link from "next/link";
-import styled from "styled-components";
+import styled from "./header.module.css";
 import HoverLogo from "../components/HoverLogo";
 
 export default function Header() {
   return (
     <Link href="/">
-      <HeaderStyled>
+      <div className={styled.header}>
         <span>ArtFly</span>
         <HoverLogo />
         <span>Projects</span>
-      </HeaderStyled>
+      </div>
     </Link>
   );
 }
-
-const HeaderStyled = styled.div`
-  font-weight: 600;
-  padding: 1.5em;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  span {
-    font-size: 34px;
-    letter-spacing: 2px;
-    font-weight: normal;
-  }
-`;

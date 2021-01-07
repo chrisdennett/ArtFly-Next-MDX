@@ -1,9 +1,9 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "./hover.module.css";
 
 const HoverLogo = () => (
-  <SvgStyled viewBox="0 0 153 153">
-    <FlyGroupStyled x={30}>
+  <svg className={styled.svgStyled} viewBox="0 0 153 153">
+    <g x={30}>
       <path
         d="M95.84 147c7.464-.427 15.57-9.89 9.66-20.65-5.727-10.44-14.36-19.27-14.36-19.27-14.85 10.37-7.205 40.93 4.702 39.92z"
         fill="#fff"
@@ -112,59 +112,9 @@ const HoverLogo = () => (
         ry="6.192"
         fill="#fff"
       />
-    </FlyGroupStyled>
-    <ShadowGroupStyled ry="7.971" x={15} y={160} />
-  </SvgStyled>
+    </g>
+    <g className={styled.shadowGroupStyled} ry="7.971" x={15} y={160} />
+  </svg>
 );
 
 export default HoverLogo;
-
-const FlyGroupStyled = styled.g`
-  animation-name: logoHover;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease;
-`;
-
-const ShadowGroupStyled = styled.rect`
-  width: 80px;
-  height: 16px;
-  fill: rgba(0, 0, 0, 0.1);
-  animation-name: shadowGrow;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease;
-`;
-
-const SvgStyled = styled.svg`
-  height: 160px;
-  width: 110px;
-  min-width: 50px;
-
-  @keyframes logoHover {
-    0% {
-      transform: translate(3px, 0px);
-    }
-    50% {
-      transform: translate(0px, -15px);
-    }
-    100% {
-      transform: translate(3px, 0px);
-    }
-  }
-
-  @keyframes shadowGrow {
-    0% {
-      width: 80px;
-      transform: translate(0px, 0px);
-    }
-    50% {
-      width: 60px;
-      transform: translate(10px, 0px);
-    }
-    100% {
-      width: 80px;
-      transform: translate(0px, 0px);
-    }
-  }
-`;

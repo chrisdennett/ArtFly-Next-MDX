@@ -1,5 +1,5 @@
 import Head from "next/head";
-import styled from "styled-components";
+import styled from "./layout.module.css";
 import Header from "./Header";
 import Img from "../components/Img";
 
@@ -16,31 +16,13 @@ export default function Layout({ children, pageTitle, description }) {
         <Header />
         {children}
       </main>
-      <FooterStyled>
-        <Fini>
+      <footer className={styled.footer}>
+        <div className={styled.ending}>
           <Img src={"Rotoscoping"} />
           <p>You know it's all over when the victorian lady jumps the stool.</p>
-        </Fini>
+        </div>
         <div>© {new Date().getFullYear()} ArtFly</div>
-      </FooterStyled>
+      </footer>
     </>
   );
 }
-
-const FooterStyled = styled.footer`
-  padding: 2rem;
-  text-align: center;
-`;
-
-const Fini = styled.div`
-  font-size: 14px;
-  background: white;
-  max-width: 240px;
-  padding: 15px;
-  border-radius: 5px;
-  margin: 0 auto 50px auto;
-
-  img {
-    margin-bottom: 10px;
-  }
-`;
